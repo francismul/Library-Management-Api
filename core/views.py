@@ -2,8 +2,8 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework import viewsets, permissions
 
-
 from .models import Book, Borrow, Return
+from .pagination import CustomPageNumberPagination
 from .serializers import BookSerializer, BorrowSerializer, ReturnSerializer
 
 
@@ -18,6 +18,7 @@ class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     permission_classes = [IsAdminOrReadOnly]
+    pagination_class = CustomPageNumberPagination
 
 
 class BorrowViewSet(viewsets.ModelViewSet):
