@@ -18,6 +18,7 @@ class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     permission_classes = [IsAdminOrReadOnly]
+    lookup_field = "slug"
     pagination_class = CustomPageNumberPagination
 
 
