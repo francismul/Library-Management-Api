@@ -73,8 +73,22 @@ This project is a Django-based API backend for managing a library system. It pro
 - I have made two python files in the core/management/commands directory
 - (import_books.py, import_users.py) 
 - This two files helps in populating the database with initial working data.
-- You'll need to find a csv file containing books, and ensure the csv header has the following fields, (title, authors, publication_date), drop the csv file called books.csv inside core/management/commands folder
+- You'll need to find a csv file containing books, and ensure the csv header has the following fields, (Title, Authors, Published Date), drop the csv file called books.csv inside core/management/commands folder
 - For users, get a csv file with the following in its header (username, first_name, last_name, password, email), call the csv file, users.csv
+
+1. Add csv file (books.csv, users.csv)
+2. Populate the database
+   - for books
+
+   ```sh
+   python manage.py import_books
+   ```
+   - for users
+
+   ```sh
+   python manage.py import_users
+   ```
+
 
 ## Usage
 
