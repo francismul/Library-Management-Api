@@ -69,6 +69,13 @@ This project is a Django-based API backend for managing a library system. It pro
     python manage.py runserver
     ```
 
+## Data
+- I have made two python files in the core/management/commands directory
+- (import_books.py, import_users.py) 
+- This two files helps in populating the database with initial working data.
+- You'll need to find a csv file containing books, and ensure the csv header has the following fields, (title, authors, publication_date), drop the csv file called books.csv inside core/management/commands folder
+- For users, get a csv file with the following in its header (username, first_name, last_name, password, email), call the csv file, users.csv
+
 ## Usage
 
 - Access the API at `http://127.0.0.1:8000/api/`
