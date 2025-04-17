@@ -2,7 +2,7 @@ services:
   db:
     image: mysql:8.0
     restart: always
-    container_name: "db_cont"
+    container_name: "library_db_container"
     environment:
       MYSQL_DATABASE: booksdb
       MYSQL_ROOT_PASSWORD: Juni0rt1t0
@@ -16,7 +16,8 @@ services:
     build:
       context: ./mysite
     command: gunicorn mysite.wsgi --bind :8000
-    container_name: "django_cont"
+    container_name: "library_django_container"
+    restart: always
     depends_on:
       - db
     env_file:
@@ -28,7 +29,7 @@ services:
 
   redis:
     image: redis:latest
-    container_name: "redis_cont"
+    container_name: "library_redis_container"
     restart: always
     volumes:
       - ./data/redis:/data
@@ -38,7 +39,7 @@ services:
   nginx:
     build: ./nginx
     image: nginx:latest
-    container_name: "nginx_container"
+    container_name: "library_nginx_container"
     restart: always
     ports:
       - 80:80
