@@ -62,8 +62,8 @@ To run the application, you need the following:
 1. **Clone the repository:**
 
    ```bash
-   git clone <repository_url>
-   cd francismul-library-management-api
+   git clone [<repository_url>](https://github.com/francismul/Library-Management-Api.git)
+   cd Library-Management-Api
    ```
 
 2. **Change into the repository directory.**
