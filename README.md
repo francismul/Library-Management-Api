@@ -62,7 +62,7 @@ To run the application, you need the following:
 1. **Clone the repository:**
 
    ```bash
-   git clone [<repository_url>](https://github.com/francismul/Library-Management-Api.git)
+   git clone https://github.com/francismul/Library-Management-Api.git
    cd Library-Management-Api
    ```
 
