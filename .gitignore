@@ -7,6 +7,6 @@ __pycache__
 
 *.csv
 db.sqlite3
-/venv
-
-
+venv
+data
+staticfiles

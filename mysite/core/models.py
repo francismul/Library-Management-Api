@@ -11,12 +11,12 @@ class Book(models.Model):
     
     def save(self, *args, **kwargs):
         if not self.slug:
-            base_slug = slugify(self.title)[:60]
+            base_slug = slugify(self.title)[:50]
             slug = base_slug
             counter = 1
             
             while Book.objects.filter(slug=slug).exists():
-                slug = f"{base_slug}-{counter}"
+                slug = slugify(f"{base_slug}-{counter}")
                 counter += 1
             self.slug = slug
         super().save(*args, **kwargs)

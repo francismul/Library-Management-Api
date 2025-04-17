@@ -4,6 +4,7 @@ from pathlib import Path
 from datetime import datetime
 
 from django.core.management.base import BaseCommand
+from django.utils.text import slugify
 
 from core.models import Book
 
@@ -26,12 +27,12 @@ class Command(BaseCommand):
 				try:
 					published_date = datetime.strptime(row["Published Date"], "%Y-%m-%d").date()
 					title = row["Title"].strip()
-					base_slug = title[:60]
+					base_slug = slugify(title)[:50]
 					slug = base_slug
 					counter = 1
 					
 					while slug in existing_slugs:
-						slug = f"{base_slug}-{counter}"
+						slug = slugify(f"{base_slug}-{counter}")
 						counter += 1
 					
 					existing_slugs.add(slug)
